@@ -1,8 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kprytkov <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/11/28 15:58:06 by kprytkov          #+#    #+#             */
+/*   Updated: 2017/11/28 15:58:07 by kprytkov         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 void 	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned	char *dst_tail;
 	unsigned	char *source;
 	unsigned	char *destination;
 
@@ -22,7 +33,7 @@ void 	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	else if (source > destination)
 	{
-		while (counter > 0)
+		while (counter >= 0)
 		{
 			*destination = *source;
 			destination++;
