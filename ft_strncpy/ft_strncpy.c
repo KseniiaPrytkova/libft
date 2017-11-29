@@ -21,17 +21,19 @@ char *ft_strncpy(char *dst, const char *src, size_t len)
 	pointer_to_dest_start = dst;
 	src_len = ft_strlen(src);
 	
-	while (counter <= len)
+	counter = 0;
+	while (counter < len)
 	{
-		while (src_len > 0)
+		if (counter < src_len) 
 		{
 			*dst = *src;
-			src_len--;
-			dst++;
 			src++;
+		} else {
+			*dst = '\0';
 		}
-		*dst = '!'; 
 
+		dst++;
+		counter++;
 	}
 
 	return (pointer_to_dest_start);

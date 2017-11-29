@@ -22,14 +22,14 @@ int		main(void)
 	char dst2_std[6];
 	char *holder2_std;
 
-	holder2_std = strncpy(dst2_std, "abcdefgh", sizeof(dst2_std));
+	holder2_std = strncpy(dst2_std, "12345678", sizeof(dst2_std));
 	printf("TEST_CASE_2:\n");
 	printf("I'm standart: %s\n", holder2_std);
 	/*----------------------------------------------------------------------*/
 	char dst2_my[6];
 	char *holder2_my;
 
-	holder2_my = ft_strncpy(dst2_my, "abcdefgh", sizeof(dst2_my));
+	holder2_my = ft_strncpy(dst2_my, "12345678", sizeof(dst2_my));
 	printf("I'm your's:   %s\n", holder2_my);
 
 	/*___TEST_CASE_3___*/
