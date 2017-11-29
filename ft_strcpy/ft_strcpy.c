@@ -25,7 +25,7 @@ char	*ft_strcpy(char *dst, const char *src)
 		src++;
 		dst++;
 	}
-
+	
 	*dst = '\0'; 
 	return (pointer_to_dest_start);
 }
