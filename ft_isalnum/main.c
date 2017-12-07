@@ -10,7 +10,7 @@ int		main(void)
 	printf("I'm your's:   %i\n", ft_isalnum(c));
 
 	/*___TEST_CASE_2___*/
-	char c_2 = 7;
+	char c_2 = 7 ;
 	printf("TEST_CASE_2:\n");
 	printf("I'm standart: %i\n", isalnum(c_2));
 
