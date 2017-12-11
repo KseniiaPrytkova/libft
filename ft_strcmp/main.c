@@ -27,8 +27,8 @@ int		main(void)
 	res_std2 = strcmp(s1_std2, s2_std2);
 	printf("I'm standart: %i\n", res_std2);
 	/*----------------------------------------------------------------------*/
-	const char *s1_my2 = "\0";
-	const char *s2_my2 = "\0";
+	const char *s1_my2 = NULL;
+	const char *s2_my2 = NULL;
 	int res_my2;
 
 	res_my2 = ft_strcmp(s1_my2, s2_my2);
