@@ -35,8 +35,7 @@ char		* ft_strtrim(char const *s)
 	char *str_end;
 
 	fresh_string = NULL;
-	first_letter = 0;
-	last_letter = 0;
+
 	if (s != NULL)
 	{
 		str_len = ft_strlen(s);
