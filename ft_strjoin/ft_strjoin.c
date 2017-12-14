@@ -5,6 +5,7 @@ char	* ft_strjoin(char const *s1, char const *s2)
 	size_t s1_len;
 	size_t s2_len;
 	char *result_string;
+
 	s1_len = 0;
 	s2_len = 0;
 	result_string = NULL;
@@ -21,7 +22,7 @@ char	* ft_strjoin(char const *s1, char const *s2)
 			*result_string = '\0';
 		}
 		else
-		return (NULL);	
+			return (NULL);	
 	}
 	return (result_string - (s1_len + s2_len));
 }
