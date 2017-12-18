@@ -9,9 +9,9 @@ void ft_putendl(char const *s)
 		len = ft_strlen(s);
 		if (len > 0)
 		{
-			write (1, s, len);
+			write (fd, s, len);
 		}
-		write (1, "\n", 1);
+		write (fd, "\n", 1);
 	}
 
 }

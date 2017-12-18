@@ -18,7 +18,7 @@ char 	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t smallstr_len;
 	size_t counter;
-	int finish;
+	size_t finish;
 
 	smallstr_len = ft_strlen(needle);
 	
