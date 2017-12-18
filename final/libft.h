@@ -71,7 +71,7 @@ void ft_putchar_fd(char c, int fd);
 void ft_putstr_fd(char const *s, int fd);
 void ft_putendl_fd(char const *s, int fd);
 void ft_putnbr_fd(int n, int fd);
-
+int		ft_substrcmp(const char *s1, const char *s2, size_t n);
 
 
 #endif
