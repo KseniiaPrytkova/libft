@@ -2,7 +2,7 @@
 
 int		main(void)
 {
-	char *s = "**some*fuck**students* ldfjgdlfjg**dkldkl****djcjkdh*";
+	char *s = "**some*cat**students*dog**pig****ddd";
 	char c = '*';
 	char **str_of_str;
 	
@@ -13,8 +13,7 @@ int		main(void)
     printf("%s\n", str_of_str[3]);
     printf("%s\n", str_of_str[4]);
     printf("%s\n", str_of_str[5]);
+    printf("%s\n", str_of_str[6]);
 
-	
-	
 	return (0);
 }

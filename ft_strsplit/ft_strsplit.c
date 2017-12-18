@@ -1,30 +1,11 @@
 #include "libft.h"
 
-size_t		how_much_words(char const *s, char c)
-{
-	size_t counter;
-
-	counter = 0;
-	while (*s != '\0')
-	{
-		if (*s != c)
-		{
-			if (*(s + 1) == c)
-				counter++;
-		}
-		s++;
-	}
-	if (*(s - 1) != c)
-		counter++;
-	return (counter);
-}
-
 size_t len_of_word(char *s, char c)
 {
 	size_t counter;
 
 	counter = 0;
-	while (*s != c)
+	while (*s != '\0' && *s != c)
 	{
 
 		counter++;
@@ -34,32 +15,38 @@ size_t len_of_word(char *s, char c)
 	return (counter);
 }
 
+size_t copy(char *dst, char *src, size_t len)
+{
+	ft_strncpy(dst, (char *)src, len);
+	return (len);
+}
 
 char	** ft_strsplit(char const *s, char c)
 {
-	char **final_storage;
-	size_t storage_size;
+	char **storage;
+	size_t stor_size;
 	size_t one_word_len;
-	char *word;
-    
-	storage_size = how_much_words(s, c);
-	final_storage = malloc(sizeof(char *) * storage_size);
-	while (*s != '\0')
-	{
-		if (*s != c)
-		{
-			one_word_len = len_of_word((char *)s, c);
-			word = malloc(sizeof(char) * one_word_len + 1);
 
-			ft_strncpy(word, (char *)s, one_word_len);
-			word = word + one_word_len;
-            *final_storage = word - one_word_len;
-            final_storage++;
-			s = s + one_word_len;
-		} else {
+	storage = NULL;
+    if (s)
+    {	
+    	stor_size = ft_wordcount(s, c);
+		if (!(storage = malloc(sizeof(char *) * stor_size + 1)))
+			return (NULL);
+		while (*s != '\0')
+		{
+			if (*s != c)
+			{
+				one_word_len = len_of_word((char *)s, c);
+				if (!(*storage = ft_strnew(one_word_len + 1)))
+					return (NULL);
+				s = s + copy(*storage, (char *)s, one_word_len) - 1;
+				storage++;
+			} 
 			s++;
 		}
+		*storage = NULL;
+		storage = storage - stor_size;
 	}
-
-	return (final_storage - storage_size);
+	return (storage);
 }
