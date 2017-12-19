@@ -33,10 +33,5 @@ int 	main(void)
 	printf("%s\n", some_5->content);
 	printf("%zu\n", some_5->content_size);
 
-	/*___TEST_CASE_6___*/
-	// t_list *some_6 = ft_lstnew("kakapus", -5);
-	// printf("TEST_CASE_6:\n");
-	// printf("%s\n", some_6->content);
-	// printf("%zu\n", some_6->content_size);
 	return (0);
 }
