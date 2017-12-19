@@ -3,7 +3,7 @@
 int		main(void)
 {
 	/*___TEST_CASE_1___*/
-	char c = 'a';
+	char c = EOF;
 	printf("TEST_CASE_1:\n");
 	printf("I'm standart: %i\n", isalpha(c));
 

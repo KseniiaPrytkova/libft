@@ -23,14 +23,14 @@ char 	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	smallstr_len = ft_strlen(needle);
 	
 	finish = len - smallstr_len;
-	if (finish <= 0)
+	if (finish <= 0 || len == 0)
 		return (NULL);
 
 	counter = 0;
 	if (*needle == '\0')
 		return ((char *)haystack);
 	
-	while (counter <= finish)
+	while (counter <= finish && *haystack)
 	{
 
 		if (ft_substrcmp(haystack, needle, smallstr_len) == 1)

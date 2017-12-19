@@ -5,7 +5,7 @@ int		main(void)
 	/*___TEST_CASE_1___*/
 	char	*largerstring_std = "Foo Bar Baz okay haha";
 	char	*smallstring_std = "okay";
-	int		len_std = 17;
+	int		len_std = 0;
 	char	*ptr_std;
 
 	ptr_std = strnstr(largerstring_std, smallstring_std, len_std);

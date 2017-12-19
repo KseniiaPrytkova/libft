@@ -12,11 +12,11 @@
 
 int	ft_toupper(int c)
 {
-	unsigned char c_transform;
+	char c_transform;
 
-	if ((unsigned char)c >= 97 && (unsigned char)c <= 122)
+	if (c >= 97 && c <= 122)
 	{
-		c_transform = (unsigned char)c - 32;
+		c_transform = (char)c - 32;
 		return (c_transform);
 	}
 	return (c);
