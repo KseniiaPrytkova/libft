@@ -18,6 +18,13 @@
 # include <stdio.h>
 # include <ctype.h>
 
+typedef struct 	s_list
+{
+	void *content;
+	size_t content_size;
+	struct s_list *next;
+} 				t_list;
+
 void	ft_putchar(char c);
 void	ft_putstr(char const *s);
 void	*ft_memset(void *b, int c, size_t len);
