@@ -22,16 +22,12 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	source = (unsigned char*)src;
 	destination = (unsigned char*)dst;
 	if (source < destination)
-	{
 		while (counter >= 0)
 		{
 			*(destination + counter) = *(source + counter);
 			counter--;
 		}
-		return (dst);
-	}
 	else if (source > destination)
-	{
 		while (counter >= 0)
 		{
 			*destination = *source;
@@ -39,8 +35,5 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 			source++;
 			counter--;
 		}
-		return (dst);
-	}
-	else
-		return (dst);
+	return (dst);
 }
