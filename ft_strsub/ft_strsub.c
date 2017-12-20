@@ -10,7 +10,7 @@ char	* ft_strsub(char const *s, unsigned int start, size_t len)
 	untouched_length = 0;
 	if (s)
 		string_len = ft_strlen(s); 
-	if (s && len > 0 && start < string_len)
+	if (s && start < string_len)
 	{
 		untouched_length = len;
 		

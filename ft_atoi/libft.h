@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <ctype.h>
+# include <limits.h>
 
 void	ft_putchar(char c);
 void	ft_putstr(char const *s);

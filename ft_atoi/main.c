@@ -6,12 +6,11 @@ int ft_atoi(char *str);
 
 int main()
 {
-//    char *given_character = "0";
-//    int result = atoi(given_character);
-//    printf("%i", result);
-    char *given_str = "-2a5";
-    ft_atoi(given_str);
-    
-    printf("%i", ft_atoi(given_str));
+		char	n[40] = "-99999999999999999999999999";
+
+	int		i1 = atoi(n);
+	int		i2 = ft_atoi(n);
+	printf("%i\n", i1);    
+	printf("%i\n", i2);
     return (0);
 }

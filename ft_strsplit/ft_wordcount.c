@@ -32,20 +32,20 @@ size_t		ft_wordcount(char const *s, char c)
 		return (ft_count(s));
 	}
 
-	if (s && s != '\0')
+	if (!s || *s == '\0')
+		return (0);
+	while (*s != '\0')
 	{
-		while (*s != '\0')
+		if (*s != c)
 		{
-			if (*s != c)
-			{
-				if (*(s + 1) == c)
-				counter++;
-			}
-			s++;
-		}
-		if (*(s - 1) != c)
+			if (*(s + 1) == c)
 			counter++;
+		}
+		s++;
 	}
+	if (*(s - 1) != c)
+		counter++;
+	
 	return (counter);
 }
 

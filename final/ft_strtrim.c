@@ -10,6 +10,7 @@ size_t		where_1st_lett_is(const char *s)
 		s++;
 		counter++;
 	}
+
 	return (counter);
 }
 
@@ -23,6 +24,7 @@ size_t		where_last_lett_is(char *s)
 		s--;
 		counter++;
 	}
+
 	return (counter);
 }
 
@@ -42,9 +44,11 @@ char		* ft_strtrim(char const *s)
 		str_end = (char *)s + (str_len - 1);
 		first_letter = where_1st_lett_is(s);
 		last_letter = where_last_lett_is(str_end);
-		str_len = str_len - (first_letter + last_letter);
-		if (first_letter == last_letter && first_letter)
+		
+		if (str_len == last_letter && first_letter && first_letter == str_len)
 			str_len = 0;
+		else 
+			str_len = str_len - (first_letter + last_letter);
 
 		if ((fresh_string = malloc(sizeof(char) * str_len + 1)) == NULL)
 			return (NULL);

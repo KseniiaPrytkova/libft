@@ -2,10 +2,21 @@
 
 int		main(void)
 {
+
+	char	*s1 = "oh no not the empty string !";
+	char	*s2 = "";
+	size_t	max = strlen(s1);
+
+	char	*i1 = strnstr(s1, s2, max);
+	char	*i2 = ft_strnstr(s1, s2, max);
+
+	printf("---- %i\n", i1 == i2);
+	// printf("---- %p\n", i2);
+
 	/*___TEST_CASE_1___*/
-	char	*largerstring_std = "Foo Bar Baz okay haha";
-	char	*smallstring_std = "okay";
-	int		len_std = 0;
+	char	*largerstring_std = "Foo";
+	char	*smallstring_std = "";
+	int		len_std = 3;
 	char	*ptr_std;
 
 	ptr_std = strnstr(largerstring_std, smallstring_std, len_std);

@@ -2,7 +2,7 @@
 
 int		main(void)
 {
-	char *s = "  \t \t \n   \n\n\n\t  ";
+	char *s = "\t\n  \t 	 BBB	\n  	";
 	printf("%s\n", ft_strtrim(s));
 	return (0);
 }

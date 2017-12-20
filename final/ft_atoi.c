@@ -9,14 +9,24 @@
 /*   Updated: 2017/09/26 19:24:52 by kprytkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-char	*ft_skit_spaces(char *str)
+int is_space(char *s)
 {
-	while (*str == ' ')
+	if (*s == ' ' || *s == '\t' || *s == '\n')
+		return (1);
+	if (*s == '\v' || *s == '\f' || *s == '\r')
+		return (1);
+	return (0);
+}
+
+char	*ft_skit_spaces(char *s)
+{
+	while (is_space(s))
 	{
-		str++;
+		s++;
 	}
-	return (str);
+	return (s);
 }
 
 char	*ft_check_minus(char *str, int *minus)
@@ -24,20 +34,30 @@ char	*ft_check_minus(char *str, int *minus)
 	if (*str == '-')
 	{
 		str++;
-		*minus = -1;
-	}
+		*minus = -(*minus);
+	} else 	if (*str == '+')
+		str++;
+	return (str);
+}
+
+char	*ft_check_sign(char *str, int *minus)
+{
+	str = ft_check_minus(str, minus);
+	if (*str == '+' || *str == '-')
+		*minus = 0;
+
 	return (str);
 }
 
 int		ft_atoi(char *str)
 {
-	int sum;
+	unsigned long long sum;
 	int check_minus;
 
 	str = ft_skit_spaces(str);
 	check_minus = 1;
 	sum = 0;
-	str = ft_check_minus(str, &check_minus);
+	str = ft_check_sign(str, &check_minus);
 	while (*str != '\0' && *str != ' ')
 	{
 		if (*str >= '0' && *str <= '9')
@@ -50,5 +70,10 @@ int		ft_atoi(char *str)
 			break ;
 		}
 	}
+
+	if (sum >= LLONG_MAX && check_minus == 1)
+		return (-1);
+	if (sum > LLONG_MAX && check_minus == -1)
+		return (0);
 	return (sum * check_minus);
 }
