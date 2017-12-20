@@ -14,7 +14,7 @@
 
 void	ft_putnbr(int n)
 {
-	longs	number;
+	long	number;
 	int		div_remainder;
 	char	result_char;
 

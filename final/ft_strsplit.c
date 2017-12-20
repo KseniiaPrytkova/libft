@@ -38,25 +38,24 @@ char	**ft_strsplit(char const *s, char c)
 	size_t	one_word_len;
 
 	storage = NULL;
-	if (s)
+	if (!s)
+		return (NULL);
+	stor_size = ft_wordcount(s, c);
+	if (!(storage = malloc(sizeof(char *) * stor_size + 1)))
+		return (NULL);
+	while (*s != '\0')
 	{
-		stor_size = ft_wordcount(s, c);
-		if (!(storage = malloc(sizeof(char *) * stor_size + 1)))
-			return (NULL);
-		while (*s != '\0')
+		if (*s != c)
 		{
-			if (*s != c)
-			{
-				one_word_len = len_of_word((char *)s, c);
-				if (!(*storage = ft_strnew(one_word_len + 1)))
-					return (NULL);
-				s = s + copy(*storage, (char *)s, one_word_len) - 1;
-				storage++;
-			}
-			s++;
+			one_word_len = len_of_word((char *)s, c);
+			if (!(*storage = ft_strnew(one_word_len + 1)))
+				return (NULL);
+			s = s + copy(*storage, (char *)s, one_word_len) - 1;
+			storage++;
 		}
-		*storage = NULL;
-		storage = storage - stor_size;
+		s++;
 	}
+	*storage = NULL;
+	storage = storage - stor_size;
 	return (storage);
 }
