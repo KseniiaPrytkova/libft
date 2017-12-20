@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*ft_skit_spaces(char *s)
+static char	*ft_skit_spaces(char *s)
 {
 	while (ft_isspace(s))
 	{
@@ -21,7 +21,7 @@ char	*ft_skit_spaces(char *s)
 	return (s);
 }
 
-char	*ft_check_minus(char *str, int *minus)
+static char	*ft_check_minus(char *str, int *minus)
 {
 	if (*str == '-')
 	{
@@ -33,7 +33,7 @@ char	*ft_check_minus(char *str, int *minus)
 	return (str);
 }
 
-char	*ft_check_sign(char *str, int *minus)
+static char	*ft_check_sign(char *str, int *minus)
 {
 	str = ft_check_minus(str, minus);
 	if (*str == '+' || *str == '-')
@@ -41,7 +41,7 @@ char	*ft_check_sign(char *str, int *minus)
 	return (str);
 }
 
-int		ft_atoi(char *str)
+int			ft_atoi(char *str)
 {
 	unsigned long long	sum;
 	int					check_minus;

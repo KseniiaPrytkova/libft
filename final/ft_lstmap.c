@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	*ft_clean_list(t_list *lst)
+static void	*ft_clean_list(t_list *lst)
 {
 	t_list *prev;
 
@@ -26,7 +26,7 @@ void	*ft_clean_list(t_list *lst)
 	return (NULL);
 }
 
-void	ft_move_next(t_list **prev_elem, t_list **first, t_list **new_elem)
+static void	ft_move_next(t_list **prev_elem, t_list **first, t_list **new_elem)
 {
 	if (!(*prev_elem))
 	{
@@ -39,7 +39,7 @@ void	ft_move_next(t_list **prev_elem, t_list **first, t_list **new_elem)
 	}
 }
 
-t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
 	t_list *new_elem;
 	t_list *prev_elem;

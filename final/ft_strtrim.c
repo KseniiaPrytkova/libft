@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-size_t		where_1st_lett_is(const char *s)
+static size_t		where_1st_lett_is(const char *s)
 {
 	size_t counter;
 
@@ -25,7 +25,7 @@ size_t		where_1st_lett_is(const char *s)
 	return (counter);
 }
 
-size_t		where_last_lett_is(char *s)
+static size_t		where_last_lett_is(char *s)
 {
 	size_t counter;
 
@@ -38,7 +38,7 @@ size_t		where_last_lett_is(char *s)
 	return (counter);
 }
 
-char		*ft_strtrim(char const *s)
+char				*ft_strtrim(char const *s)
 {
 	char	*fresh_string;
 	size_t	first_letter;

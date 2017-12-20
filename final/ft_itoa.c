@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int		how_many_digits(int n)
+static int		how_many_digits(int n)
 {
 	int		counter;
 	long	positive_n;
@@ -33,7 +33,7 @@ int		how_many_digits(int n)
 	return (counter);
 }
 
-void	convert_positive(char *string, long positive_n)
+static void		convert_positive(char *string, long positive_n)
 {
 	if (positive_n == 0)
 		*(string - 1) = '0';
@@ -45,7 +45,7 @@ void	convert_positive(char *string, long positive_n)
 	}
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	char	*final_storage;
 	char	*result;
