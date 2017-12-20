@@ -15,7 +15,7 @@
 char	*ft_strnew(size_t size)
 {
 	char *place;
-	
+
 	size++;
 	place = malloc(size);
 	if (place == NULL)
