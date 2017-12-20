@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kprytkov <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/12/20 19:22:26 by kprytkov          #+#    #+#             */
+/*   Updated: 2017/12/20 19:22:27 by kprytkov         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void ft_putendl(char const *s)
+void	ft_putendl(char const *s)
 {
 	size_t len;
 
@@ -9,9 +21,8 @@ void ft_putendl(char const *s)
 		len = ft_strlen(s);
 		if (len > 0)
 		{
-			write (1, s, len);
+			write(1, s, len);
 		}
-		write (1, "\n", 1);
+		write(1, "\n", 1);
 	}
-
 }

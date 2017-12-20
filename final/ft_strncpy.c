@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char *ft_strncpy(char *dst, const char *src, size_t len)
+char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
 	size_t	counter;
 	char	*pointer_to_dest_start;
@@ -20,22 +20,18 @@ char *ft_strncpy(char *dst, const char *src, size_t len)
 
 	pointer_to_dest_start = dst;
 	src_len = ft_strlen(src);
-	
 	counter = 0;
 	while (counter < len)
 	{
-		if (counter < src_len) 
+		if (counter < src_len)
 		{
 			*dst = *src;
 			src++;
-		} else {
-			*dst = '\0';
 		}
-
+		else
+			*dst = '\0';
 		dst++;
 		counter++;
 	}
-
 	return (pointer_to_dest_start);
-
 }

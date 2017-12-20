@@ -18,7 +18,6 @@ void	ft_putstr(char const *s)
 
 	if (s == NULL)
 		return ;
-
 	len = ft_strlen(s);
 	if (len > 0)
 	{
