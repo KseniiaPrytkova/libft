@@ -11,18 +11,9 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int is_space(char *s)
-{
-	if (*s == ' ' || *s == '\t' || *s == '\n')
-		return (1);
-	if (*s == '\v' || *s == '\f' || *s == '\r')
-		return (1);
-	return (0);
-}
-
 char	*ft_skit_spaces(char *s)
 {
-	while (is_space(s))
+	while (ft_isspace(s))
 	{
 		s++;
 	}

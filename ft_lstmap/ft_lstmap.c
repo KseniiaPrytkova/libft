@@ -1,14 +1,30 @@
 #include "libft.h"
 
-void clean_list(t_list *lst)
+void *ft_clean_list(t_list *lst)
 {
 	t_list *prev;
 
 	prev = lst;
-	while (lst != NULL) {
+	while (lst != NULL)
+	{
 		lst = lst->next;
 		free(prev);
 		prev = lst;
+	}
+
+	return (NULL);
+}
+
+void ft_move_next(t_list **prev_elem, t_list **first, t_list **new_elem)
+{
+	if (!(*prev_elem))
+	{
+		*prev_elem = *first;
+	}
+	else 
+	{
+		(*prev_elem)->next = *new_elem;
+		*prev_elem = *new_elem;
 	}
 }
 
@@ -20,33 +36,18 @@ t_list * ft_lstmap(t_list *lst, t_list * (*f)(t_list *elem))
 
 	prev_elem = NULL;
 	first = NULL;
-	if (lst && f)
+	while(lst && f)
 	{
-		while(lst != NULL)
-		{
-			new_elem = ft_lstnew(lst->content, lst->content_size);
-			if (!new_elem)
-			{
-				clean_list(first);
-				return (NULL);
-			}
+		if (!(new_elem = ft_lstnew(lst->content, lst->content_size)))
+			return (ft_clean_list(first));
 
-			new_elem = f(new_elem);
-			if (!first)
-				first = new_elem;
+		new_elem = f(new_elem);
+		if (!first)
+			first = new_elem;
 
-			// if (!new_elem || new_elem->next == NULL)
-			// 	return (first);
-
-			if (!prev_elem)
-				prev_elem = first;
-			else 
-				prev_elem->next = new_elem;	
-	
-			// printf("%s\n", new_elem->content);		
-			lst = lst->next;
-		}
-		return (first);
+		ft_move_next(&prev_elem, &first, &new_elem);
+		lst = lst->next;
 	}
-	return (NULL);
+
+	return (first);
 }
