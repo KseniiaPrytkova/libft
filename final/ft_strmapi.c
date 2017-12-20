@@ -11,20 +11,17 @@ char	* ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	counter = 0;
 	if (s != NULL && f != NULL)
 	{
-		len = ft_strlen(s);
-		if (len > 0)
-			new_area = malloc(sizeof(char) * len + 1);
-		if (new_area != NULL)
+		len = ft_strlen(s);		
+		if (len == 0 || !(new_area = malloc(sizeof(char) * len + 1)))
+			return (NULL);
+		while (*s != '\0')
 		{
-			while (*s != '\0')
-			{
-				*new_area = f(counter, *s);
-				s++;
-				new_area++;
-				counter++;
-			}
-			*new_area = '\0';
+			*new_area = f(counter, *s);
+			s++;
+			new_area++;
+			counter++;
 		}
+		*new_area = '\0';
 	}
 	return (new_area - len);
 }

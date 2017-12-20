@@ -16,7 +16,7 @@ void	ft_putnbr_fd(int n, int fd)
 
 	if (number / 10 > 0) 
 	{
-		ft_putnbr(number / 10);
+		ft_putnbr_fd(number / 10, fd);
 	}
 	div_remainder = number % 10;
 	result_char = div_remainder + '0';

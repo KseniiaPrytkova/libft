@@ -2,7 +2,7 @@
 
 int		main(void)
 {
-	char *s = "   kaka hth jjhk jyj jy		  ";
+	char *s = "  \t \t \n   \n\n\n\t  ";
 	printf("%s\n", ft_strtrim(s));
 	return (0);
 }
