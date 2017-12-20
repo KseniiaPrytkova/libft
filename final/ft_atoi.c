@@ -9,6 +9,7 @@
 /*   Updated: 2017/09/26 19:24:52 by kprytkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_skit_spaces(char *s)
@@ -26,7 +27,8 @@ char	*ft_check_minus(char *str, int *minus)
 	{
 		str++;
 		*minus = -(*minus);
-	} else 	if (*str == '+')
+	}
+	else if (*str == '+')
 		str++;
 	return (str);
 }
@@ -36,14 +38,13 @@ char	*ft_check_sign(char *str, int *minus)
 	str = ft_check_minus(str, minus);
 	if (*str == '+' || *str == '-')
 		*minus = 0;
-
 	return (str);
 }
 
 int		ft_atoi(char *str)
 {
-	unsigned long long sum;
-	int check_minus;
+	unsigned long long	sum;
+	int					check_minus;
 
 	str = ft_skit_spaces(str);
 	check_minus = 1;
@@ -61,7 +62,6 @@ int		ft_atoi(char *str)
 			break ;
 		}
 	}
-
 	if (sum >= LLONG_MAX && check_minus == 1)
 		return (-1);
 	if (sum > LLONG_MAX && check_minus == -1)
