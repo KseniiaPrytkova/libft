@@ -1,38 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kprytkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/20 19:42:50 by kprytkov          #+#    #+#             */
-/*   Updated: 2017/12/20 19:42:53 by kprytkov         ###   ########.fr       */
+/*   Created: 2017/11/29 18:18:17 by kprytkov          #+#    #+#             */
+/*   Updated: 2017/11/29 18:18:19 by kprytkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	size_t	s1_len;
-	size_t	s2_len;
-	char	*result_string;
+	size_t	counter;
+	char	*pointer_to_dest_start;
+	size_t	src_len;
 
-	s1_len = 0;
-	s2_len = 0;
-	result_string = NULL;
-	if (s1 != NULL && s2 != NULL)
+	pointer_to_dest_start = dst;
+	src_len = ft_strlen(src);
+	counter = 0;
+	while (counter < len)
 	{
-		s1_len = ft_strlen(s1);
-		s2_len = ft_strlen(s2);
-		result_string = ft_strnew(s1_len + s2_len + 1);
-		if (result_string)
+		if (counter < src_len)
 		{
-			ft_strncpy(result_string, s1, s1_len);
-			ft_strncpy((result_string + s1_len), s2, s2_len);
+			*dst = *src;
+			src++;
 		}
 		else
-			return (NULL);
+			*dst = '\0';
+		dst++;
+		counter++;
 	}
-	return (result_string);
+	return (pointer_to_dest_start);
 }
